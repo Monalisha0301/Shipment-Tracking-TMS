@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shipment TMS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🚚 Shipment TMS
+        </div>
+
+        <div class="nav-links">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#create">Create Shipment</a>
+            <a href="#shipments">Shipments</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Dashboard -->
+        <section id="dashboard">
+
+            <h1>Shipment Dashboard</h1>
+
+            <p class="subtitle">
+                Manage and track your shipments easily
+            </p>
+
+            <div class="dashboard-cards">
+
+                <div class="card">
+                    <h3>Total Shipments</h3>
+                    <p id="totalShipments">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Created</h3>
+                    <p id="createdShipments">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>In Transit</h3>
+                    <p id="transitShipments">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Delivered</h3>
+                    <p id="deliveredShipments">0</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Create Shipment -->
+        <section id="create" class="form-section">
+
+            <h2>Create New Shipment</h2>
+
+            <form id="shipmentForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>Tracking Number</label>
+
+                        <input
+                            type="text"
+                            id="trackingNumber"
+                            placeholder="Example: SHP1001"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Customer Name</label>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="Enter customer name"
+                            required>
+
+                    </div>
+                    <div class="form-group">
+
+                        <label>Pickup Location</label>
+
+                        <input
+                            type="text"
+                            id="pickupLocation"
+                            placeholder="Example: Bangalore"
+                            required>
+
+                    </div>
+                    <div class="form-group">
+
+                        <label>Delivery Location</label>
+                        <input
+                            type="text"
+                            id="deliveryLocation"
+                            placeholder="Example: Hyderabad"
+                            required>
+                    </div>
+                    <div class="form-group">
+
+                        <label>Driver Name</label>
+
+                        <input
+                            type="text"
+                            id="driverName"
+                            placeholder="Enter driver name">
+
+                    </div>
+                    <div class="form-group">
+
+                        <label>Vehicle Number</label>
+                        <input
+                            type="text"
+                            id="vehicleNumber"
+                            placeholder="Example: KA01AB1234">
+
+                    </div>
+                 </div>
+                <button type="submit" class="primary-btn">
+                    Create Shipment
+                </button>
+
+            </form>
+
+            <p id="message"></p>
+
+        </section>
+        
+        <!-- Shipment List -->
+        <section id="shipments" class="shipment-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Shipment List</h2>
+
+                    <p>
+                        View and manage all shipments
+                    </p>
+                </div>
+
+                <button
+                    class="refresh-btn"
+                    onclick="loadShipments()">
+
+                    🔄 Refresh
+
+                </button>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Tracking Number</th>
+                            <th>Customer</th>
+                            <th>Route</th>
+                            <th>Driver</th>
+                            <th>Vehicle</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="shipmentTableBody">
+
+                        <tr>
+
+                            <td colspan="8">
+                                Loading shipments...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Shipment TMS | Transport Management System
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
+
